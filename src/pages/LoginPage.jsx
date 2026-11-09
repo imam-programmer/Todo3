@@ -142,17 +142,6 @@ export default function LoginPage() {
               )}
             </div>
 
-            <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-600">
-              <input
-                type="checkbox"
-                name="remember"
-                checked={values.remember}
-                onChange={handleChange}
-                className="h-4 w-4 rounded border-slate-300 text-indigo-700 focus:ring-indigo-300"
-              />
-              Keep me logged in on this device
-            </label>
-
             <button
               type="submit"
               disabled={submitting}
@@ -162,24 +151,9 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <div className="my-7 flex items-center gap-4 text-sm text-slate-400">
-            <span className="h-px flex-1 bg-slate-200" />
-            or
-            <span className="h-px flex-1 bg-slate-200" />
-          </div>
+       
 
-          <button
-            type="button"
-            className="flex w-full items-center justify-center gap-3 rounded-lg border border-slate-300 bg-white px-4 py-3 font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300"
-          >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
-              <path fill="#4285F4" d="M22.5 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h5.9a5.05 5.05 0 0 1-2.19 3.31v2.75h3.54c2.07-1.91 3.25-4.72 3.25-8.09z" />
-              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.54-2.75c-.98.66-2.24 1.05-3.74 1.05-2.87 0-5.3-1.94-6.17-4.55H2.17v2.84A11 11 0 0 0 12 23z" />
-              <path fill="#FBBC05" d="M5.83 14.09a6.6 6.6 0 0 1 0-4.18V7.07H2.17a11 11 0 0 0 0 9.86l3.66-2.84z" />
-              <path fill="#EA4335" d="M12 5.36c1.62 0 3.07.56 4.21 1.65l3.15-3.15C17.45 2.09 14.97 1 12 1A11 11 0 0 0 2.17 7.07l3.66 2.84C6.7 7.3 9.13 5.36 12 5.36z" />
-            </svg>
-            Continue with Google
-          </button>
+
         </div>
       </main>
     </div>
