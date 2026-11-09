@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 function validate(values) {
   const errors = {};
@@ -46,16 +47,10 @@ export default function LoginPage() {
     setSubmitting(true);
     setFormError("");
     try {
-      // Replace this with your real API call, e.g.:
-      // const res = await fetch("/api/login", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(values),
-      // });
-      // if (!res.ok) throw new Error("Invalid credentials");
+
       await new Promise((resolve) => setTimeout(resolve, 900));
       console.log("Logged in as", values.email);
-      // e.g. navigate("/dashboard");
+
     } catch (err) {
       setFormError("That email and password don't match. Check them and try again.");
     } finally {
@@ -65,33 +60,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen bg-slate-50 text-slate-900">
-      {/* Brand panel: hidden on small screens */}
-      <aside className="hidden w-5/12 flex-col justify-between bg-indigo-950 p-12 text-indigo-100 lg:flex">
-        <div className="flex items-center gap-2.5 text-lg font-semibold text-white">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-300 font-bold text-indigo-950">
-            T
-          </span>
-          Trellis
-        </div>
 
-        <div>
-          <h2 className="text-4xl font-semibold leading-tight text-white">
-            Pick up where
-            <br />
-            you left off.
-          </h2>
-          <p className="mt-5 max-w-sm text-lg leading-relaxed text-indigo-200">
-            Your projects, tasks, and team updates are waiting for you.
-          </p>
-        </div>
-
-        <p className="text-sm text-indigo-300">
-          Need help signing in?{" "}
-          <a href="/support" className="font-medium text-amber-300 hover:underline">
-            Contact support
-          </a>
-        </p>
-      </aside>
 
       {/* Form panel */}
       <main className="flex flex-1 items-center justify-center px-6 py-12">
@@ -99,9 +68,10 @@ export default function LoginPage() {
           <h1 className="text-3xl font-semibold tracking-tight">Log in to your account</h1>
           <p className="mt-2 text-slate-600">
             New here?{" "}
-            <a href="/register" className="font-medium text-indigo-700 hover:text-indigo-900 hover:underline">
+            <Link to="/" className="font-medium text-indigo-700 hover:text-indigo-900 hover:underline">
               Create an account
-            </a>
+            </Link>
+           
           </p>
 
           {formError && (
@@ -142,9 +112,6 @@ export default function LoginPage() {
                 <label htmlFor="password" className="block text-sm font-medium text-slate-700">
                   Password
                 </label>
-                <a href="/forgot-password" className="text-sm font-medium text-indigo-700 hover:text-indigo-900 hover:underline">
-                  Forgot password?
-                </a>
               </div>
               <div className="relative">
                 <input
